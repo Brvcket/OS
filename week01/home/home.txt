@@ -1,0 +1,16 @@
+libfprint-2-tod1-goodix_0.0.4-0ubuntu1somerville1_amd64.deb
+utserver.tar.gz
+xorg.conf
+mousewheel.sh
+Music
+Videos
+Templates
+Documents
+Public
+intelFPGA_lite
+Downloads
+Desktop
+Pictures
+snap
+notes.txt
+week01
