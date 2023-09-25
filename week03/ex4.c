@@ -55,7 +55,7 @@ int main() {
 
     double addition_initial_value_double = 0.0;
     double multiplication_initial_value_double = 1.0;
-    double max_initial_value_double = DBL_MIN;
+    double max_initial_value_double = -DBL_MAX;
     int addition_initial_value_int = 0;
     int multiplication_initial_value_int = 1;
     int max_initial_value_int = INT_MIN;
