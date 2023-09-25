@@ -157,7 +157,9 @@ int main() {
     append_to_file(&ex31, "int main(){printf(\"Hello World!\");}");
 
     // Print the paths of all files
-    show_dir(&root);
+    printp_file(&ex31);
+    printp_file(&ex32);
+    printp_file(&bash);
 
     return 0;
 }
