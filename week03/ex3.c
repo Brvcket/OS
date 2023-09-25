@@ -13,7 +13,7 @@ struct Directory;
 // File structure
 struct File {
     unsigned int id;
-    char name[MAX_NAME_LENGTH];
+    char name[MAX_NAME_LENGTH + 1];
     size_t size;
     char data[MAX_FILE_SIZE];
     struct Directory *directory;
@@ -21,7 +21,7 @@ struct File {
 
 // Directory structure
 struct Directory {
-    char name[MAX_NAME_LENGTH];
+    char name[MAX_NAME_LENGTH + 1];
     struct File *files[MAX_FILE_SIZE];
     struct Directory *directories[MAX_FILE_SIZE];
     unsigned char nf;
