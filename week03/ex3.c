@@ -139,27 +139,28 @@ int main() {
     bash.size = strlen(bash.data) + 1;
     add_file(&bash, &bin);
 
-    struct File ex31;
-    ex31.id = 2;
-    strcpy(ex31.name, "ex31.c");
-    strcpy(ex31.data, "int printf(const char * format, ...);");
-    ex31.size = strlen(ex31.data) + 1;
-    add_file(&ex31, &home);
+    struct File ex3_1;
+    ex3_1.id = 2;
+    strcpy(ex3_1.name, "ex3_1.c");
+    strcpy(ex3_1.data, "int printf(const char * format, ...);");
+    ex3_1.size = strlen(ex3_1.data) + 1;
+    add_file(&ex3_1, &home);
 
-    struct File ex32;
-    ex32.id = 3;
-    strcpy(ex32.name, "ex32.c");
-    strcpy(ex32.data, "// This is a comment in C language");
-    ex32.size = strlen(ex32.data) + 1;
-    add_file(&ex32, &home);
+    struct File ex3_2;
+    ex3_2.id = 3;
+    strcpy(ex3_2.name, "ex3_2.c");
+    strcpy(ex3_2.data, "// This is a comment in C language");
+    ex3_2.size = strlen(ex3_2.data) + 1;
+    add_file(&ex3_2, &home);
 
     // Append content to files
-    append_to_file(&ex31, "int main(){printf(\"Hello World!\");}");
+    append_to_file(&ex3_1, "int main(){printf(\"Hello World!\");}");
 
     // Print the paths of all files
-    printp_file(&ex31);
-    printp_file(&ex32);
+    printp_file(&ex3_1);
+    printp_file(&ex3_2);
     printp_file(&bash);
 
     return 0;
 }
+
