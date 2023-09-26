@@ -22,8 +22,8 @@ struct File {
 // Directory structure
 struct Directory {
     char name[MAX_NAME_LENGTH + 1];
-    struct File *files[MAX_FILE_SIZE];
-    struct Directory *directories[MAX_FILE_SIZE];
+    struct File *files[256];
+    struct Directory *directories[256];
     unsigned char nf;
     unsigned char nd;
     char path[MAX_PATH_SIZE];
@@ -62,7 +62,7 @@ void printp_file(struct File *file) {
 // Function that adds a file to a directory
 void add_file(struct File *file, struct Directory *dir) {
     if (file && dir) {
-        if (dir->nf < MAX_FILE_SIZE) {
+        if (dir->nf < 256) {
             file->directory = dir;
             dir->files[dir->nf++] = file;
         } else {
@@ -163,4 +163,3 @@ int main() {
 
     return 0;
 }
-
