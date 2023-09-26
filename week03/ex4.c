@@ -5,16 +5,20 @@
 
 void *aggregate(void *base, size_t size, int n, void *initial_value, void *(*opr)(const void *, const void *)) {
     char *result = initial_value;
+    void* prev_result;
 
     for (int i = 0; i < n; i++) {
+        prev_result = result;
         result = opr(result, (char *)base + i * size);
+        if (i == 0) continue;
+        free(prev_result);
     }
 
     return result;
 }
 
 void *addition_ints(const void *a, const void *b) {
-    int *result = malloc(sizeof(int));
+    int *result = malloc(sizeof(int));;
     *result = *(int *)a + *(int *)b;
     return result;
 }
