@@ -18,7 +18,7 @@ void *aggregate(void *base, size_t size, int n, void *initial_value, void *(*opr
 }
 
 void *addition_ints(const void *a, const void *b) {
-    int *result = malloc(sizeof(int));;
+    int *result = malloc(sizeof(int));
     *result = *(int *)a + *(int *)b;
     return result;
 }
