@@ -2,8 +2,11 @@
 #include <stdlib.h>
 
 int const_tri(int *p, int n) {
-    if (n <= 2) return p[2];
-    for (int i = 3; i <= n; i++) {
+    if (n == 0) return 0;
+    if (n == 1) return p[0];
+    if (n == 2) return p[1];
+    if (n == 3) return p[2];
+    for (int i = 4; i <= n; i++) {
         int temp = p[0] + p[1] + p[2];
         p[0] = p[1];
         p[1] = p[2];
@@ -31,6 +34,7 @@ int main() {
     }
 
     printf("Tribonacci number for n = 10: %d\n", const_tri(p, 10));
+
 
     free(p);
     return 0;

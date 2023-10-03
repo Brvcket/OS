@@ -5,9 +5,13 @@
 
 void *aggregate(void *base, size_t size, int n, void *initial_value, void *(*opr)(const void *, const void *)) {
     char *result = initial_value;
+    void* prev_result;
 
     for (int i = 0; i < n; i++) {
+        prev_result = result;
         result = opr(result, (char *)base + i * size);
+        if (i == 0) continue;
+        free(prev_result);
     }
 
     return result;
