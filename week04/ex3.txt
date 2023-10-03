@@ -1,0 +1,2 @@
+Explanation of results:
+When n = 3, we create 3 child processes. After 5 seconds, they sleep and become zombies. When n = 5, we create 5 child processes, and the similar behavior is happening, but we can see zombies from the previous program call before it completed
