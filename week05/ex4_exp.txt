@@ -1,0 +1,1 @@
+Similar to the previous task, increasing the number of threads increases the program's execution speed. However, with a large number of threads, the improvement stops "earlier" than in the previous task.

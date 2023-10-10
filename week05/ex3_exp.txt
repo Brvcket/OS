@@ -1,1 +1,1 @@
-n = 10000000
+As the number of threads increases, the startup time decreases because each thread has to process fewer iterations, and the execution time is equal to the time of the "longest" thread. Surprisingly, the speed increases even after the number of allocated threads exceeds the number of processor threads. I think this may be due to the fact that there is less idle time waiting for memory. The real reason is probably only to be found out in an operating systems course.
