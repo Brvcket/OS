@@ -15,3 +15,5 @@ for m in "${m_values[@]}"; do
 done
 
 echo "Results are stored in ex3_res.txt"
+
+rm -f ex4
