@@ -196,7 +196,7 @@ void check_burst(){
     exit(EXIT_SUCCESS);
 }
 
-
+int is_process_running = 0;
 // This function is called every one second as handler for SIGALRM signal
 void schedule_handler(int signum) {
     // Increment the total time
@@ -206,42 +206,43 @@ void schedule_handler(int signum) {
     if (running_process != -1) {
         if (data[running_process].burst > 0) {
             data[running_process].burst--;
-        }
 
-        printf("Scheduler: Runtime: %u seconds.\nScheduler: Process %d is running with %d seconds left\n", total_time, running_process, data[running_process].burst);
+            // Mark that a process is currently running
+            is_process_running = 1;
 
-        // 1.A. If the worker process finished its burst time, then the scheduler should terminate
-        //    the running process and prints the message:
-        //    "Scheduler: Terminating Process {running_process} (Remaining Time: {data[running_process].burst})"
-        if (data[running_process].burst == 0) {
-            printf("Scheduler: Terminating Process %d (Remaining Time: %d)\n", running_process, data[running_process].burst);
+            printf("Scheduler: Runtime: %u seconds.\nScheduler: Process %d is running with %d seconds left\n", total_time, running_process, data[running_process].burst);
 
-            terminate(running_process);
-            running_process = -1;
-            completed[running_process] = 1;
+            // 1.A. If the worker process finished its burst time.
+            if (data[running_process].burst == 0) {
+                printf("Scheduler: Terminating Process %d (Remaining Time: %d)\n", running_process, data[running_process].burst);
+
+                // Wait for its termination and calculate its metrics (ct, tat, wt).
+                terminate(running_process);
+
+                // Reset the running_process.
+                completed[running_process] = 1; // mark the process as completed.
+                running_process = -1;
+
+                // Mark that no process is currently running
+                is_process_running = 0;
+            }
         }
     }
 
-    // 2. After that, we need to find the next process to run {next_process}.
+    // 2. After that, find the next process to run.
     check_burst();
     ProcessData next_process = find_next_process();
 
-    // 3. If {next_process} is not running, then we need to check the current process
-    if (running_process != next_process.idx) {
+
+    // 3. If no process is currently running and next_process is not running, start it.
+    if (!is_process_running && running_process != next_process.idx) {
         create_process(next_process.idx);
         printf("Scheduler: Starting Process %d (Remaining Time: %d)\n", next_process.idx, data[next_process.idx].burst);
         data[next_process.idx].rt = total_time - data[next_process.idx].at;
-
-        if (data[next_process.idx].rt == data[next_process.idx].bt) {
-            printf("Scheduler: Resuming Process %d (Remaining Time: %d)\n", running_process, data[running_process].burst);
-            resume(running_process);
-        }
     }
 
     check_burst();
 }
-
-
 
 int main(int argc, char *argv[]) {
     total_time = 0;
