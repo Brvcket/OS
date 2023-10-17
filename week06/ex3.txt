@@ -1,0 +1,58 @@
+Let's look at the simulation results for SJF for given sample (open ex2.txt to see the simulation results for FIFO):
+Simulation results.....
+process 0: 
+  at=5
+  bt=2
+  ct=7
+  wt=0
+  tat=2
+  rt=0
+process 1: 
+  at=7
+  bt=6
+  ct=15
+  wt=2
+  tat=8
+  rt=2
+process 2: 
+  at=20
+  bt=3
+  ct=23
+  wt=0
+  tat=3
+  rt=0
+process 3: 
+  at=3
+  bt=8
+  ct=32
+  wt=21
+  tat=29
+  rt=21
+process 4: 
+  at=2
+  bt=4
+  ct=9
+  wt=3
+  tat=7
+  rt=5
+process 5: 
+  at=3
+  bt=1
+  ct=4
+  wt=0
+  tat=1
+  rt=0
+process 6: 
+  at=10
+  bt=6
+  ct=24
+  wt=8
+  tat=14
+  rt=13
+data size = 7
+Average results for this run:
+  avg_wt=4.857143
+  avg_tat=9.142858
+
+As we can see, the average waiting time is significantly lower, because the shorter jobs are prioritized.
+Moreover, the average turnaround time is also relatively low. So, in summary, SJF outperformed FIFO in terms of minimizing waiting times and optimizing turnaround times.

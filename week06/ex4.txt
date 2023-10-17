@@ -1,0 +1,58 @@
+Let's look at the simulation results for RR for given sample (open ex2.txt and ex3.txt to see the simulation results for FIFO and SJF):
+Simulation results.....
+Simulation results.....
+process 0: 
+  at=5
+  bt=2
+  ct=7
+  wt=0
+  tat=2
+  rt=0
+process 1: 
+  at=7
+  bt=6
+  ct=13
+  wt=0
+  tat=6
+  rt=0
+process 2: 
+  at=20
+  bt=3
+  ct=23
+  wt=0
+  tat=3
+  rt=0
+process 3: 
+  at=3
+  bt=8
+  ct=19
+  wt=8
+  tat=16
+  rt=10
+process 4: 
+  at=2
+  bt=4
+  ct=25
+  wt=19
+  tat=23
+  rt=21
+process 5: 
+  at=3
+  bt=1
+  ct=26
+  wt=22
+  tat=23
+  rt=22
+process 6: 
+  at=10
+  bt=6
+  ct=32
+  wt=16
+  tat=22
+  rt=16
+data size = 7
+Average results for this run:
+  avg_wt=9.285714
+  avg_tat=13.571428
+
+As we can see, the results are slightly longer than for SJF, but better than for FIFO. 
