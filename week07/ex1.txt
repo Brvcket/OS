@@ -1,0 +1,8 @@
+Results:
+Throughput of first_fit (queries per second) is equal to 266.17
+Throughput of best_fit (queries per second) is equal to 85.21
+Throughput of worst_fit (queries per second) is equal to 66.01
+
+Findings:
+The largest throughput is shown by the First Fit algorithm, that allocates memory by taking the first available memory block
+that fits the query. The Best Fit and Worst Fit algorithms, in contrast, are slower at allocating memory since they take time to search for the best or worst fitting blocks. This is nothing but trade-off between time and memory.
