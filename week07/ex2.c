@@ -9,9 +9,6 @@
 #define BUFFER_SIZE 500 * 1024
 
 int main() {
-    FILE *text_file = fopen("text.txt", "w");
-    fclose(text_file);
-
     int text = open("text.txt", 02);
     if (text == -1) {
         perror("Unable to open text.txt");
