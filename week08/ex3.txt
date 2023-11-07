@@ -1,7 +1,7 @@
-An experiment showed that if we do not free memory inside of for loop, compilator will not do it instead of us, and memory usage will increase linearly. If we put free inside of loop, it will save us from in for-loop memory leak.
-Also, 10 MB usage even without free inside of for-loop shows that it's not enough for swap-in swap-outs for 10 iterations. If we increase it to 1000 MB, we see that si-so sometimes are not zero. It means that swap-in and swap-out are happen.
+An experiment showed that if we do not free memory inside the for-loop, the compiler will not do it instead of us, and memory usage will increase linearly. If we put free inside the loop, it will save us from in-loop memory leaks.
+Also, 10 MB of usage even without free inside the for-loop shows that it's not enough for swap-in swap-outs for 10 iterations. If we increase it to 1000 MB, we see that si-so is sometimes not zero. It means that swap-ins and swap-outs happen.
 
-Output (for code withoud free inside of for-loop and 1000 MB MEMORY_SIZE):
+Output (for code without free() inside of for-loop (the first for-loop with memory allocation, of course) and 1000 MB MEMORY_SIZE):
 [1] 24273
 procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
  r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
