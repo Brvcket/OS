@@ -1,6 +1,6 @@
 For sample input and number of pages = 1000, number of frames = 200:
-random hit ratio = 0.19
-nfu hit ratio = 0.22
-aging hit ratio = 0.19
+random hit ratio = 0.192
+nfu hit ratio = 0.196
+aging hit ratio = 0.190
 
-Of course, it depents on random seed, on the sample and many other things. But what we see is that generally nfu and aging are a little bit better than random algorithm.
+Of course, it depends on a random seed, a sample, and many other things. But what we see is that generally, NFU and aging are a little bit better than random algorithm.

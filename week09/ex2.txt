@@ -1,0 +1,1 @@
+TLB size correlates with the size of the page table; it results in a bigger miss ratio, but for a bigger page table, you have a bigger TLB table, and it will result in a lower miss ratio.
