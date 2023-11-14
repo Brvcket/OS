@@ -21,7 +21,7 @@ That means that the file was opened and modified.
 
 When creating a soft link to /tmp/myfile1.txt, monitor will print:
 File/directory created: myfile13.txt
-File/Directory: /home/bulatik/CLionProjects/OS/week10/dir/myfile11.txt
+File/Directory: /home/bulatik/CLionProjects/OS/week10/dir/myfile13.txt
 Size: 69 bytes, Blocks: 8, IO Block: 4096
 Device: 66306, Inode: 2496660, Links: 1
 Access: 100664
